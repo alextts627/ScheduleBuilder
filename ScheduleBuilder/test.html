@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="main.css">
+<script src="yui-min.js"></script>
+<script>
+YUI().use('dd-delegate', 'dd-drop-plugin', 'dd-drop', function(Y) {
+    Y.DD.DDM.on('drag:drophit', function(e) {
+        var drop = e.drop.get('node'),
+        drag = e.drag.get('node');
+        
+        drag.setStyles({
+            left: 0,
+            top: 0,
+            backgroundColor: drag.getStyle('backgroundColor')
+        });
+        
+        drop.appendChild(drag);
+    });
+
+    Y.DD.DDM.on('drag:end', function(e) {
+        var drag = e.target;
+        //Put our styles back
+        drag.get('node').setStyles({
+            left: 0,
+            top: 0
+        });
+    });
+
+    var dragable = Y.Node.all('#class div');
+    dragable.each(function(v,k) {
+        var ind = new Y.DD.Drag({
+            node: v
+        });
+    });
+
+    var targets = Y.Node.all('#main div');
+    targets.each(function(v,k) {
+       var ind = new Y.DD.Drop({
+           node: v
+       });
+    });
+});
+</script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+        <table id="main">
+            <tr>
+                <th></th>
+                <th>Room 1</th>
+                <th>Room 2</th>
+                <th>Room 3</th>
+                <th>Room 4</th>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+                <td><div></div></td>
+            </tr>
+        </table>
+            </td>
+                <td>
+                    <div id="class">
+                    <ul>
+                        <li>Drag the class on to the schedule.</li>
+                        <li>
+                            <div>
+                                Class 1<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 2<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 3<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 4<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 5<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 6<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 7<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 8<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                Class 9<br />
+                                <select>
+                                    <option>Staff</option>
+                                    <option>Teacher 1</option>
+                                    <option>Teacher 2</option>
+                                    <option>Teacher 3</option>
+                                    <option>Teacher 4</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

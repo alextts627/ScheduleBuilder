@@ -1,0 +1,1 @@
+select * from prerequisites left join course_catalog on course_catalog.idcourse_catalog = depends where prerequisites.idcourse_catalog = '4'
