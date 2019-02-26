@@ -1,2 +1,2 @@
 # ScheduleBuilder
-Colloge project
+Drag and Drop tool for class schedule
